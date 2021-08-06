@@ -315,6 +315,9 @@ comparing depth across samples.***
                 }
         tb = pd.DataFrame(data, columns= ['Barcode','Profondeur', 'Couverture'])
         print (tb)
+        section = report_doc.add_section()
+        section.table(tb, index=False)
+       
         
     # canned VCF stats report component
     if not args.hide_variants:
