@@ -250,14 +250,7 @@ comparing depth across samples.***
             )
             b.append(sample)
             pro.append(depth_mean)
-            c.append(depth_thresh)
-            
-            report.markdown("""
-            ### Tableaux
-
-            """, key="Tableaux_header")
-            report.table(tb, key="summary")
-            
+            c.append(depth_thresh)        
             p.varea(
                 x=depth['pos'], y1=0.1, y2=depth['depth'],
                 fill_color=Colors.cerulean)
@@ -313,12 +306,17 @@ comparing depth across samples.***
         cover_panel = Tabs(tabs=[tab1, tab2, tab3])
         section.plot(cover_panel)
         
-        data = {'Barcode' : b,
+data = {'Barcode' : b,
         'Profondeur': pro,
         'Couverture': c
         }
 tb = pd.DataFrame(data, columns= ['Barcode','Profondeur', 'Couverture'])
 print (tb)
+report.markdown("""
+### Tableaux
+
+""", key="Tableaux_header")
+report.table(tb, key="summary")
 
     # canned VCF stats report component
     if not args.hide_variants:
