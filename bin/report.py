@@ -232,6 +232,9 @@ comparing depth across samples.***
         plots_orient = list()
         plots_combined = list()
         depth_lim = args.report_depth
+        pro = list()
+        c = list()
+        b = list()
         for sample in sorted(df['sample_name'].unique()):
             bc = df['sample_name'] == sample
             depth = df[bc].groupby('pos').sum().reset_index()
