@@ -315,12 +315,7 @@ comparing depth across samples.***
                 }
         tb = pd.DataFrame(data, columns= ['Barcode','Profondeur', 'Couverture'])
         print (tb)
-        report.markdown("""
-        ### Tableaux
-
-        """, key="Tableaux_header")
-        report.table(tb, key="summary")
-
+        
     # canned VCF stats report component
     if not args.hide_variants:
         section = report_doc.add_section()
