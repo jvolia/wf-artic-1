@@ -302,6 +302,13 @@ comparing depth across samples.***
             child=gridplot(plots_orient, ncols=3), title="By read orientation")
         cover_panel = Tabs(tabs=[tab1, tab2, tab3])
         section.plot(cover_panel)
+        
+        data = {'Barcode' : bc,
+        'Profondeur': depth_mean,
+        'Couverture': depth_thresh
+        }
+tb = pd.DataFrame(data, columns= ['Barcode','Profondeur', 'Couverture'])
+print (tb)
 
     # canned VCF stats report component
     if not args.hide_variants:
