@@ -248,6 +248,16 @@ comparing depth across samples.***
                 height=250, width=400,
                 x_axis_label='position', y_axis_label='depth',
             )
+            b.append(sample)
+            pro.append(depth_mean)
+            c.append(depth_thresh)
+            
+            report.markdown("""
+            ### Tableaux
+
+            """, key="Tableaux_header")
+            report.table(tb, key="summary")
+            
             p.varea(
                 x=depth['pos'], y1=0.1, y2=depth['depth'],
                 fill_color=Colors.cerulean)
@@ -303,9 +313,9 @@ comparing depth across samples.***
         cover_panel = Tabs(tabs=[tab1, tab2, tab3])
         section.plot(cover_panel)
         
-        data = {'Barcode' : bc,
-        'Profondeur': depth_mean,
-        'Couverture': depth_thresh
+        data = {'Barcode' : b,
+        'Profondeur': pro,
+        'Couverture': c
         }
 tb = pd.DataFrame(data, columns= ['Barcode','Profondeur', 'Couverture'])
 print (tb)
