@@ -40,7 +40,7 @@ READFILE="${sample_name}_${sample_name}.fastq"
 artic minion --medaka --normalise 600 --threads ${threads} \
     --read-file ${READFILE} \
     --medaka-model ${medaka_model} \
-    --scheme-directory scheme_directory \
+    --scheme-directory wf-artic-DENV/data/primer_schemes/ \
     ${full_scheme_name} ${sample_name} \
     || mock_artic
 
