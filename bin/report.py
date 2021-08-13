@@ -109,7 +109,7 @@ def main():
     args = parser.parse_args()
 
     report_doc = report.WFReport(
-        "SARS-CoV-2 ARTIC Sequencing report", "wf-artic",
+        "DENV ARTIC Sequencing report", "wf-artic",
         revision=args.revision, commit=args.commit)
 
     section = report_doc.add_section()
